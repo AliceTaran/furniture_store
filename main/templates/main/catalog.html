@@ -1,0 +1,77 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}FERAL_&_CRAFT - Каталог{% endblock %}
+
+{% block content %}
+    <div class="llist d-flex">
+        <!-- Сайдбар с категориями (из list.html) -->
+        <div class="sidebar">
+            <h3>Категории</h3>
+            <ul>
+                <li {% if not category %} class="selected"{% endif %}>
+                    <a href="{% url 'main:catalog' %}">Все</a>
+                </li>
+                {% for c in categories %}
+                    <li {% if category.slug == c.slug %} class="selected"{% endif %}>
+                        <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="main">
+            <!-- Заголовок (из list.html) -->
+            <div class="main-title">
+                {% if category %}{{ category.name }}{% else %}Продукты{% endif %}
+            </div>
+
+            <!-- Блок с популярными товарами (из catalog.html) -->
+            <div class="home recomendation">
+                <div class="rec-title mb-4">
+                    <h3><span>Популярные</span></h3>
+                </div>
+            </div>
+
+            <!-- Сетка товаров (объединяем оба подхода) -->
+            <div class="product-list">
+                <div class="items">
+                    {% for product in products %}
+                        <div class="item">
+                            <a href="{{ product.get_absolute_url }}" class="home-card d-flex flex-column align-items-center text-center">
+                                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.svg' %}{% endif %}" class="card-img" alt="">
+                                <h5 class="title-card">{{ product.name }}</h5>
+                                {% if product.discount %}
+                                    <div class="card-discount d-flex gap-2">
+                                        <p class="line">$ {{ product.price }}</p>
+                                        <p>$ {{ product.sell_price }}</p>
+                                    </div>
+                                {% else %}
+                                    <p class="price">$ {{ product.price }}</p>
+                                {% endif %}
+                            </a>
+                        </div>
+                    {% empty %}
+                        <p>Товары не найдены</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <ul class="pagination">
+                <li class="{% if not products.has_previous %}disabled{% endif %}">
+                    <a href="{% if products.has_previous %}?page={{ products.previous_page_number }}{% endif %}">Previous</a>
+                </li>
+                {% for page in products.paginator.page_range %}
+                    {% if page >= products.number|add:-2 and page <= products.number|add:2 %}
+                        <li>
+                            <a href="?page={{ page }}" class="{% if products.number == page %}disabled{% endif %}">{{ page }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                <li class="{% if not products.has_next %}disabled{% endif %}">
+                    <a href="{% if products.has_next %}?page={{ products.previous_page_number }}{% endif %}">Next</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
