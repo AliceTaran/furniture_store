@@ -24,15 +24,9 @@
         <div class="main">
             <!-- Заголовок (из list.html) -->
             <div class="main-title">
-                {% if category %}{{ category.name }}{% else %}Продукты{% endif %}
+                {% if category %}{{ category.name }}{% else %}Товары{% endif %}
             </div>
 
-            <!-- Блок с популярными товарами (из catalog.html) -->
-            <div class="home recomendation">
-                <div class="rec-title mb-4">
-                    <h3><span>Популярные</span></h3>
-                </div>
-            </div>
 
             <!-- Сетка товаров (объединяем оба подхода) -->
             <div class="product-list">
@@ -59,7 +53,7 @@
             </div>
             <ul class="pagination">
                 <li class="{% if not products.has_previous %}disabled{% endif %}">
-                    <a href="{% if products.has_previous %}?page={{ products.previous_page_number }}{% endif %}">Previous</a>
+                    <a href="{% if products.has_previous %}?page={{ products.previous_page_number }}{% endif %}">Предыдущий</a>
                 </li>
                 {% for page in products.paginator.page_range %}
                     {% if page >= products.number|add:-2 and page <= products.number|add:2 %}
@@ -69,7 +63,7 @@
                     {% endif %}
                 {% endfor %}
                 <li class="{% if not products.has_next %}disabled{% endif %}">
-                    <a href="{% if products.has_next %}?page={{ products.previous_page_number }}{% endif %}">Next</a>
+                    <a href="{% if products.has_next %}?page={{ products.previous_page_number }}{% endif %}">Следующий</a>
                 </li>
             </ul>
         </div>
