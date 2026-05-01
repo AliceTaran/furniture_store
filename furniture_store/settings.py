@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'cart',
     'users',
     'orders',
+    'payment',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -141,3 +142,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 CART_SESSION_ID = 'cart'
 
 AUTH_USER_MODEL = 'users.User'
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51TSM5DKFKzM6B7mNZcam3FwfPcywHEPsrMgOhN04A9drI3AjRwNtKjE2QLTEIpkpaJi6knN4H2r8HZiLjCBkFlHV00dCJGMd6R'
+STRIPE_SECRET_KEY = 'sk_test_51TSM5DKFKzM6B7mNndeDHYAYiLXa72rmDm3haM7vdyXDT4H56NlRrNpQmp7LgpHPW4pwOmxKsGPdtjD9Cc6iVbwV000yuzLzYq'
+STRIPE_API_VERSION = '2022-08-01'
+
+STRIPE_WEBHOOK_SECRET = ''
