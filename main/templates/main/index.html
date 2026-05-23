@@ -9,59 +9,20 @@
     <div class="hero--info">
         <h2>FERAL & CRAFT</h2>
     </div>
-        <img src="{% static 'main/img/blue_cheir.svg' %}" alt="">
+        <div class="hero_img">
+            <img src="{% static 'main/img/blue_cheir.svg' %}" alt="">
+        </div>
  </div>
 
 {% endblock %}
 
-<!--КОНТЕЙНЕРЫ С КОМНАТАМИ-->
-{% block section  %}
-<div class="blocks">
-<div class="rooms">
-    <div class="block">
-        <span>
-            <img src="{% static 'main/img/ikn.spalna.svg' %}" alt="">
-            Спальня
-        </span>
-    </div>
 
-    <div class="block">
-        <span>
-            <img src="{% static 'main/img/ikn.kitchen.svg' %}" alt="">
-            Кухня
-        </span>
-    </div>
-
-    <div class="block">
-        <span>
-            <img src="{% static 'main/img/ikn.living.svg' %}" alt="">
-            Гостиная
-        </span>
-    </div>
-
-    <div class="block">
-        <span>
-            <img src="{% static 'main/img/ikn.bathroom.svg' %}" alt="">
-            Ванная
-        </span>
-    </div>
-
-    <div class="block">
-        <span>
-            <img src="{% static 'main/img/ikn.decor.svg' %}" alt="">
-            Декор
-        </span>
-    </div>
-    </div>
-    </div>
-
-{% endblock   %}
 
 <!--БЛОК СО СКИДКАМИ-->
 {% block disckount %}
 <div class="disckount">
     <div class="container">
-        <p>Актуальные скидки и специальные предложения</p>
+        <h2 class="section-title">Актуальные скидки и специальные предложения</h2>
         <div class="skidka-container">
             <div class="skidka1">
                 <a href="/catalog.html" class="block-link">
@@ -85,87 +46,144 @@
 
 <!--РЕШЕНИЕ ПО СТИЛЮ-->
 {% block decision %}
-<div class="decision">
-    <p class="decision__title">Мы собрали лучшие решения<br> по стилю, материалам и трендам</p>
-    <button class="btn btn--primary">Показать больше</button>
-    
-    <div class="decision-grid">
-        <!-- Карточка 1 -->
-        <div class="decision-card">
-            <div class="decision-card__image">
-                <img src="{% static 'main/img/stile1.svg' %}" alt="Стильное решение 1">
-            </div>
-        </div>
-
-        <!-- Карточка 2 -->
-        <div class="horizontal-layout">
-            <!-- ЛЕВАЯ ЧАСТЬ - stile2 -->
-            <div class="horizontal-layout__item">
-                <div class="decision-card">
-                    <div class="decision-card__image">
-                       <a href="/catalog.html" class="block-link">
-                            <img src="{% static 'main/img/stile2.svg' %}" alt="Стильное решение 2">
-                        </a>
-                    </div>
+<div class="container decision">
+    <div class="decision">
+        <h2 class="decision__title">Мы собрали лучшие решения<br> по стилю, материалам и трендам</h2>
+        <button> 
+            <span class="button_top">Показать больше</span>
+        </button>
+        
+        <div class="decision-grid">
+            <!-- Карточка 1 -->
+            <div class="decision-card">
+                <div class="decision-card__image">
+                    <img src="{% static 'main/img/stile1.svg' %}" alt="Стильное решение 1">
                 </div>
             </div>
-            
-            <!-- Текст и кнопка по центру -->
-            <div class="horizontal-layout__center">
-                <p class="decision-card__text">Добавьте цвета: Стильные детали любого пространства</p>
-                <button class="btn btn--secondary">Каталог</button>
-            </div>
-            
-            <!-- stile3 справа -->
-            <div class="horizontal-layout__item">
-                <div class="decision-card">
-                    <div class="decision-card__image">
+
+            <!-- Карточка 2 -->
+            <div class="horizontal-layout">
+                <!-- ЛЕВАЯ ЧАСТЬ - stile2 -->
+                <div class="horizontal-layout__item">
+                    <div class="decision-card">
+                        <div class="decision-card__image-l">
                         <a href="/catalog.html" class="block-link">
-                            <img src="{% static 'main/img/stile3.svg' %}" alt="Стильное решение 3">
-                        </a>
+                                <img src="{% static 'main/img/stile2.svg' %}" alt="Кружка.Стильное решение2">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Текст и кнопка по центру -->
+                <div class="horizontal-layout__item">
+                    <h3 class="decision-card__text">Добавьте цвета:<br> Стильные детали<br> любого пространства</h3>
+                </div>
+                
+                <!-- stile3 справа -->
+                <div class="horizontal-layout__item">
+                    <div class="decision-card">
+                        <div class="decision-card__image-r">
+                            <a href="/catalog.html" class="block-link">
+                                <img src="{% static 'main/img/stile3.svg' %}" alt="Оранж.Ст.Стильное решение 3">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Карточка 4 -->
-        <div class="decision-card">
-            <div class="decision-card__image">
-                <img src="{% static 'main/img/stile4.svg' %}" alt="Стильное решение 4">
+            <!-- Карточка 4 -->
+            <div class="decision-card">
+                <div class="decision-card__image">
+                    <img src="{% static 'main/img/stile4.svg' %}" alt="Стильное решение 4">
+                </div>
             </div>
-        </div>
+        <div class="horizontal-3cart">
+            <!-- Карточка 5 -->
+            <div class="decision-card">
+                <div class="decision-card__image-l">
+                    <a href="/catalog.html" class="block-link">
+                        <img src="{% static 'main/img/stile5.svg' %}" alt="Стильное решение 5">
+                    </a>
+                </div>
+                <div class="decision-card__content">
+                    <h3 class="decision-card__text">Стильные часы<br> для гостиной</h3>
+                </div>
+            </div>
 
-        <!-- Карточка 5 -->
-        <div class="decision-card">
-            <div class="decision-card__image">
-                <a href="/catalog.html" class="block-link">
-                    <img src="{% static 'main/img/stile5.svg' %}" alt="Стильное решение 5">
-                </a>
+            <!-- Карточка 6 -->
+            <div class="decision-card">
+                <div class="decision-card__image6">
+                    <img src="{% static 'main/img/stile6.svg' %}" alt="Стильное решение 6">
+                </div>
             </div>
-            <div class="decision-card__content">
-                <button class="btn btn--secondary">Декор</button>
-                <p class="decision-card__text">Стильные часы для гостиной</p>
+            <!-- Карточка 7 -->
+            <div class="decision-card">
+                <div class="decision-card__image-r">
+                    <a href="/catalog.html" class="block-link">
+                        <img src="{% static 'main/img/stile7.svg' %}" alt="Стильное решение 7">
+                    </a>
+                </div>
+                <div class="decision-card__content">
+                    <h3 class="decision-card__text">Каждый предмет<br> — артефакт</h3>
+                </div>
             </div>
         </div>
-
-        <!-- Карточка 6 -->
-        <div class="decision-card">
-            <div class="decision-card__image">
-                <img src="{% static 'main/img/stile6.svg' %}" alt="Стильное решение 6">
-            </div>
-        </div>
-        <!-- Карточка 7 -->
-        <div class="decision-card">
-            <div class="decision-card__image">
-                <a href="/catalog.html" class="block-link">
-                    <img src="{% static 'main/img/stile7.svg' %}" alt="Стильное решение 5">
-                </a>
-            </div>
-            <div class="decision-card__content">
-                <button class="btn btn--secondary">Декор</button>
-                <p class="decision-card__text">Каждый предмет — артефакт</p>
-            </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block footer %}
+        <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <!-- Логотип -->
+            <div class="footer-logo">
+                <h2>F&C</h2>
+            </div>
+            
+            <!-- Контакты и соцсети -->
+            <div class="footer-contacts">
+                <h2>КОНТАКТЫ</h2>
+                
+                <div class="social-footer">
+                    <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'main/img/WK.svg' %}" alt="VK" width="40" height="40">
+                    </a>
+                    <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'main/img/Tg.svg' %}" alt="Telegram" width="40" height="40">
+                    </a>
+                    <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'main/img/WA.svg' %}" alt="WhatsApp" width="40" height="40">
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <span class="contact-label">Телефон</span>
+                    <span class="contact-value">+7927 466 74 54</span>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-label">Почта</span>
+                    <span class="contact-value">F&G@mail.ru</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const heroImage = document.querySelector('.hero_img');
+        if (heroImage) {
+            // Плавное поднятие картинки при загрузке
+            setTimeout(() => {
+                heroImage.style.transition = 'transform 0.8s ease-out';
+                heroImage.style.transform = 'translateY(-150px)';
+            }, 200);
+        }
+    });
+</script>
 {% endblock %}

@@ -20,4 +20,5 @@ urlpatterns = [
     path('favorites/', views.favorites, name='favorites'),
     path('cart/', views.cart, name='cart'),
     
+    
 ]

@@ -44,7 +44,7 @@ img {
 
 .container {
     box-sizing: border-box;
-    max-width: 1600px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
@@ -357,36 +357,47 @@ header nav ul li:not(.active) a:hover {
 
 /*Текст и картинка главной секции index.html*/
 .hero {
-    padding-bottom: 100px;
-    position: relative;
-    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    min-height: 100vh;       
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
+
 .hero--info {
-    padding-top: 100px;
+    text-align: center;
+    width: 100%;
 }
 
 .hero--info h2 {
+    margin-top: 140px;
     font-size: 140px;
     font-weight: 300;
-    text-align: center;
-    margin-top: 5px;
+    position: relative;
+    top: -40px;
+    display: inline-block; 
+    left: 0;
+    right: 0;
 }
 
-.hero img{
-    position: absolute;
-    margin-top: -170px;
-    margin-left: 320px;
+.hero_img {
+    text-align: center; 
+    margin-top: -100px;
+    z-index: 10;
+    transition: transform 0.8s ease-out;
 }
-.hero img {
-    width: 450px; 
+.hero_img img {
+    width: 450px;
     height: auto;
+    display: inline-block; 
 }
-
 
 /*Контейнеры с комнатами*/
 .blocks {
     margin-left: 225px;
-    margin-top: 120px;
+    margin-top: 20px;
     justify-content: space-between; 
     display: flex;
     align-items: center;
@@ -424,8 +435,9 @@ header nav ul li:not(.active) a:hover {
 /*Блок со скидками*/
 
 .disckount {
-    background-color: #222222;
-    padding: 20px 0;
+    background: linear-gradient(135deg, #222222, #424452);
+    padding: 50px 0;
+    margin-top: -50px;
 }
 .disckount p {
     font-size: 30px;
@@ -435,12 +447,17 @@ header nav ul li:not(.active) a:hover {
     margin-top: 20px;
     margin-bottom: 30px;
 }
+.section-title{
+    color: #fff;
+    text-align: center;
+}
 .skidka-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
     border: 2px;
+    padding: 50px 0;
 }
 .skidka1, .skidka2, .skidka3 {
     border: 1px;
@@ -452,3 +469,353 @@ header nav ul li:not(.active) a:hover {
 }
 
 
+
+
+
+/*Блок с общей инфой*/
+.decision {
+    position: relative;
+}
+
+.decision__title {
+    display: inline-block; /* Чтобы заголовок не занимал всю ширину */
+    margin-top: 60px;
+}
+
+button {
+  /* Variables */
+  --button_radius: 0.75em;
+  --button_color: #FFFF;
+  --button_outline_color: #000000;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+}
+.button_top {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 90px;
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+}
+button:hover .button_top {
+  /* Pull the button upwards when hovered */
+  transform: translateY(-0.33em);
+}
+
+button:active .button_top {
+  /* Push the button downwards when pressed */
+  transform: translateY(0);
+}
+.decision-card__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.decision-card__image img {
+    max-width: 100%;
+    height: auto;
+}
+.horizontal-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.horizontal-layout__item {
+    flex: 1;
+}
+.horizontal-layout__item:first-child {
+    text-align: left;
+}
+
+.horizontal-layout__item:last-child {
+    text-align: right;
+}
+.horizontal-layout__item:last-child .decision-card__image-r img {
+    margin-top: 80px;
+}
+/* Для центрирования текста */
+.horizontal-layout__item:nth-child(2) {
+    text-align: center;
+}
+.decision-card__image-l img,
+.decision-card__image-r img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 50px;
+}
+.horizontal-3cart{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.decision-card {
+    flex: 1;
+    min-width: 250px; /* Минимальная ширина карточки */
+}
+.decision-card__image6{
+    margin-top: 50px;
+}
+/* Для последней карточки (с синей лампой) */
+.horizontal-3cart .decision-card:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Выравнивает содержимое по правому краю */
+}
+/* Для контента внутри последней карточки */
+.horizontal-3cart .decision-card:last-child .decision-card__image-r {
+    text-align: right;
+    width: 100%;
+}
+.horizontal-3cart .decision-card:last-child .decision-card__image-r img {
+    display: inline-block;
+    margin-left: auto;
+}
+.horizontal-3cart .decision-card:last-child .decision-card__content {
+    text-align: right;
+    width: 100%;
+}
+
+
+
+/* Footer с нашими контактами */
+.footer {
+    background-image: url('{% static "main/img/Footer.svg" %}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 80px 0 60px; /* Увеличено: было 60px 0 40px */
+    margin-top: 80px;
+    min-height: 500px; /* Минимальная высота футера */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-logo {
+    position: relative;
+    top: -10px;
+}
+
+.footer-logo h2 {
+    margin-top: -50px;
+    font-size: 48px;
+    font-weight: 400;
+    margin: 0;
+    color: #fff;
+}
+
+.footer-contacts h2 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #fff;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #fff;
+    width: 1300px;
+    max-width: 100%;
+}
+
+
+.contact-item:first-of-type {
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.contact-label {
+    font-weight: 600;
+    min-width: 80px;
+    color: #FFF;
+}
+
+.contact-value {
+    color: #fff;
+}
+
+.social-footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.contact-item:first-child {
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.contact-label {
+    font-weight: 600;
+    min-width: 80px;
+    color: #FFF;
+}
+
+.contact-value {
+    color: #fff;
+}
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+    
+    .contact-label {
+        min-width: auto;
+    }
+}
+
+
+
+
+
+
+/* Страница "О компании" */
+.about-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+.about_img img{
+    border-radius: 20px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* Левая колонка */
+.about-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-title {
+    font-size: 80px;
+    font-weight: 400;
+    color: #000;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Правая колонка */
+.about-right {
+    flex: 1;
+    min-width: 400px;
+}
+
+.about-subtitle {
+    font-size: 32px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 0px;
+    letter-spacing: 2px;
+}
+
+.about-audience-title {
+    font-size: 28px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.about-description {
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.about-btn {
+    background: transparent;
+    border: 1px solid #000;
+    color: #000;
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+}
+
+.about-btn:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .about-title {
+        font-size: 50px;
+    }
+    
+    .about-right {
+        min-width: auto;
+    }
+    
+    .about-audience-title {
+        font-size: 22px;
+    }
+    
+    .about-description {
+        font-size: 16px;
+    }
+}

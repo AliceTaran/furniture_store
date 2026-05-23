@@ -1,13 +1,36 @@
 {% extends 'main/layout.html' %}
 {% load static %}
 
-{% block title %}FERAL_&_CRAFT - О нас{% endblock %}
+{% block title %}FERAL_&_CRAFT - О компании{% endblock %}
 
 {% block content %}
-    <div class="about container">
-         <img src="{% static 'main/img/about.png' %}" alt="">
+    <div class="about-page">
+    <div class="container">
+        <div class="about-content">
+          <div class="about_img">
+               <img src="{% static 'main/img/about.png' %}" alt="">
+          </div>
+            <!-- Левая колонка -->
+            <div class="about-left">
+                <h1 class="about-title">FERAL & CRAFT</h1>
+            </div>
+            
+            <!-- Правая колонка -->
+            <div class="about-right">
+                <div class="about-text">
+                    <h2 class="about-subtitle">О КОМПАНИИ</h2>
+                    <h3 class="about-audience-title">Наши ценности:</h3>
+                    <p class="about-description">
+                        Мы создаем предметы интерьера, которые живут своей жизнью.<br>
+                        В каждой линии чувствуется «дикая» натура: мы не прячем текстуру дерева,<br>
+                        не шлифуем характер массивов и не боимся брутальных форм.<br>
+                        Второе крыло нашей философии — безупречный крафт (craft):<br>
+                        точная столярка, ручные соединения, эксклюзивная отделка маслами и восками.
+                    </p>
+                    <a href="catalog.html" class="about-btn">Показать больше</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <h4>FERAL & CRAFT</h4>
-    <p>Целевая аудитория («Приручающие Хаос»):Это цифровые кочевники с характером, основатели. Они мыслящими вне рамок, ценят аутентичность и обладают мощной внутренней энергией, которую им нужно выразить через свое пространство. Их дом — это их логово, святилище и манифест.</p>
-     <button class="btn">Показать больше</button>
+</div>
 {% endblock %}
