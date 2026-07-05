@@ -24,7 +24,7 @@ def catalog(request, category_slug=None):
                   {
                       'category': category,
                       'categories': categories,
-                      'products': products[:3] if not category_slug else products  
+                      'products': products[:8] if not category_slug else products  
                       # На главной каталога показываем 3 товара, 
                       # в категориях - все
                   })

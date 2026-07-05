@@ -43,8 +43,8 @@
 
         <div class="detail-description">
             <h2>{{ product.name }}</h2>
-            <h3>Category: {{ product.category }}</h3>
-            <p>Description: {{ product.description|linebreaks }}</p>
+            <h3>Категория: {{ product.category }}</h3>
+            <p>Описание: {{ product.description|linebreaks }}</p>
             
             {% if product.discount %}
                 <div class="card-discount d-flex gap-2">
@@ -60,7 +60,7 @@
                 <div class="cart-form">
                     {{ cart_product_form }}
                 </div>
-                <input type="submit" class="add-to-cart-btn" value="Add to cart">
+                <input type="submit" class="add-to-cart-btn" value="В корзину">
             </form>
         </div>
     </div>

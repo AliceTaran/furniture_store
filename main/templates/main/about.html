@@ -5,30 +5,135 @@
 
 {% block content %}
     <div class="about-page">
-    <div class="container">
-        <div class="about-content">
-          <div class="about_img">
-               <img src="{% static 'main/img/about.png' %}" alt="">
-          </div>
-            <!-- Левая колонка -->
-            <div class="about-left">
-                <h1 class="about-title">FERAL & CRAFT</h1>
+        <div class="container">
+            <div class="about-content">
+                <div class="about_img">
+                    <img src="{% static 'main/img/about.png' %}" alt="">
+                </div>
+                <!-- Левая колонка -->
+                <div class="about-left">
+                    <h1 class="about-title">FERAL & CRAFT</h1>
+                </div>
+                
+                <!-- Правая колонка -->
+                <div class="about-right">
+                    <div class="about-text">
+                        <h2 class="about-subtitle">О КОМПАНИИ</h2>
+                        <h3 class="about-audience-title">Наши ценности:</h3>
+                        <p class="about-description">
+                            Мы создаем предметы интерьера, которые живут своей жизнью.<br>
+                            В каждой линии чувствуется «дикая» натура: мы не прячем текстуру дерева,<br>
+                            не шлифуем характер массивов и не боимся брутальных форм.<br>
+                            Второе крыло нашей философии — безупречный крафт (craft):<br>
+                            точная столярка, ручные соединения, эксклюзивная отделка маслами и восками.
+                        </p>
+                        <a href="{% url 'main:catalog' %}" class="about-btn">Показать больше</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Блок преимуществ -->
+    <div class="features-section">
+        <div class="container">
+            <h2 class="features-title">Вот что делает нас вашим лучшим выбором</h2>
+            
+            <div class="features-grid">
+                <!-- Преимущество 1 -->
+                <div class="feature-item">
+                    <div class="feature-img">
+                        <img src="{% static 'main/img/im_pre1.svg' %}" alt="Высокое качество">
+                    </div>
+                    <h3 class="feature-name">Высокое качество</h3>
+                    <p class="feature-description">
+                        Качество — это не особенность.<br>
+                        Это единственно возможный стандарт.
+                    </p>
+                </div>
+                
+                <!-- Преимущество 2 -->
+                <div class="feature-item">
+                    <div class="feature-img">
+                        <img src="{% static 'main/img/im_pre2.svg' %}" alt="Высокое качество">
+                    </div>
+                    <h3 class="feature-name">Современный дизайн</h3>
+                    <p class="feature-description">
+                        Мы говорим на языке будущего, но материалами,<br>
+                        пережившими века.
+                    </p>
+                </div>
+                
+                <!-- Преимущество 3 -->
+                <div class="feature-item">
+                    <div class="feature-img">
+                        <img src="{% static 'main/img/im_pre3.svg' %}" alt="Высокое качество">
+                    </div>
+                    <h3 class="feature-name">Широкий ассортимент</h3>
+                    <p class="feature-description">
+                        Мы создаём не коллекции, мы создаём экосистему.<br>
+                        Где каждый предмет, от дивана до полки, говорит на одном языке —<br>
+                        языке силы и мастерства.
+                    </p>
+                </div>
             </div>
             
-            <!-- Правая колонка -->
-            <div class="about-right">
-                <div class="about-text">
-                    <h2 class="about-subtitle">О КОМПАНИИ</h2>
-                    <h3 class="about-audience-title">Наши ценности:</h3>
-                    <p class="about-description">
-                        Мы создаем предметы интерьера, которые живут своей жизнью.<br>
-                        В каждой линии чувствуется «дикая» натура: мы не прячем текстуру дерева,<br>
-                        не шлифуем характер массивов и не боимся брутальных форм.<br>
-                        Второе крыло нашей философии — безупречный крафт (craft):<br>
-                        точная столярка, ручные соединения, эксклюзивная отделка маслами и восками.
-                    </p>
-                    <a href="catalog.html" class="about-btn">Показать больше</a>
-                </div>
+            <!-- Кнопка -->
+            <div class="features-btn-wrapper">
+                <a href="{% url 'main:catalog' %}" class="features-btn">Показать больше →</a>
+            </div>
+        </div>
+    </div> 
+    <!-- Блок с цифрами -->
+<div class="stats-section">
+    <div class="container">
+        <div class="stats-header">
+            <h2 class="stats-title">О нас в цифрах</h2>
+            <p class="stats-subtitle">
+                Мы не создаем мебель. Мы усмиряем сырую, необузданную энергию материала и придаем ей утонченную форму
+            </p>
+            <a href="{% url 'main:catalog' %}" class="about-btn">Показать больше</a>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">90<span class="stat-symbol">%</span></div>
+                <div class="stat-label">удовлетворённость</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-value">200<span class="stat-symbol">+</span></div>
+                <div class="stat-label">Средний чек</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-value">200<span class="stat-symbol">+</span></div>
+                <div class="stat-label">уровень зарплаты</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-value">24<span class="stat-symbol">/7</span></div>
+                <div class="stat-label">работает</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-value">23<span class="stat-symbol">+</span></div>
+                <div class="stat-label">городов в России</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-value">500<span class="stat-symbol">+</span></div>
+                <div class="stat-label">заказов в месяц</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-value">15</div>
+                <div class="stat-label">филиалов</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-value">98<span class="stat-symbol">%</span></div>
+                <div class="stat-label">качество перевозок</div>
             </div>
         </div>
     </div>

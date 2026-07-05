@@ -25,17 +25,17 @@
         <h2 class="section-title">Актуальные скидки и специальные предложения</h2>
         <div class="skidka-container">
             <div class="skidka1">
-                <a href="/catalog.html" class="block-link">
+                <a href="{% url 'main:catalog' %}" class="block-link">
                     <img src="{% static 'main/img/sskidka1.svg' %}" alt="Скидка 1">
                 </a>
             </div>
             <div class="skidka2">
-                <a href="/catalog.html" class="block-link">
+                <a href="{% url 'main:catalog' %}" class="block-link">
                     <img src="{% static 'main/img/sskidka2.svg' %}" alt="Скидка 2">
                 </a>
             </div>
             <div class="skidka3">
-                <a href="/catalog.html" class="block-link">
+                <a href="{% url 'main:catalog' %}" class="block-link">
                     <img src="{% static 'main/img/sskidka3.svg' %}" alt="Скидка 3">
                 </a>
             </div>
@@ -49,9 +49,11 @@
 <div class="container decision">
     <div class="decision">
         <h2 class="decision__title">Мы собрали лучшие решения<br> по стилю, материалам и трендам</h2>
-        <button> 
-            <span class="button_top">Показать больше</span>
-        </button>
+        <a href="{% url 'main:catalog' %}">
+            <button> 
+                <span class="button_top">Показать больше</span>
+            </button>
+        </a>
         
         <div class="decision-grid">
             <!-- Карточка 1 -->
@@ -67,7 +69,7 @@
                 <div class="horizontal-layout__item">
                     <div class="decision-card">
                         <div class="decision-card__image-l">
-                        <a href="/catalog.html" class="block-link">
+                        <a href="{% url 'main:catalog' %}" class="block-link">
                                 <img src="{% static 'main/img/stile2.svg' %}" alt="Кружка.Стильное решение2">
                             </a>
                         </div>
@@ -83,7 +85,7 @@
                 <div class="horizontal-layout__item">
                     <div class="decision-card">
                         <div class="decision-card__image-r">
-                            <a href="/catalog.html" class="block-link">
+                            <a href="{% url 'main:catalog' %}" class="block-link">
                                 <img src="{% static 'main/img/stile3.svg' %}" alt="Оранж.Ст.Стильное решение 3">
                             </a>
                         </div>
@@ -101,7 +103,7 @@
             <!-- Карточка 5 -->
             <div class="decision-card">
                 <div class="decision-card__image-l">
-                    <a href="/catalog.html" class="block-link">
+                    <a href="{% url 'main:catalog' %}" class="block-link">
                         <img src="{% static 'main/img/stile5.svg' %}" alt="Стильное решение 5">
                     </a>
                 </div>
@@ -119,7 +121,7 @@
             <!-- Карточка 7 -->
             <div class="decision-card">
                 <div class="decision-card__image-r">
-                    <a href="/catalog.html" class="block-link">
+                    <a href="{% url 'main:catalog' %}" class="block-link">
                         <img src="{% static 'main/img/stile7.svg' %}" alt="Стильное решение 7">
                     </a>
                 </div>

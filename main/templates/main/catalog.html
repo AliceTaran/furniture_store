@@ -10,7 +10,7 @@
             <h3>Категории</h3>
             <ul>
                 <li {% if not category %} class="selected"{% endif %}>
-                    <a href="{% url 'main:catalog' %}">Все</a>
+                    <a href="{% url 'main:catalog' %}">Популярные</a>
                 </li>
                 {% for c in categories %}
                     <li {% if category.slug == c.slug %} class="selected"{% endif %}>
@@ -63,7 +63,7 @@
                     {% endif %}
                 {% endfor %}
                 <li class="{% if not products.has_next %}disabled{% endif %}">
-                    <a href="{% if products.has_next %}?page={{ products.previous_page_number }}{% endif %}">Следующий</a>
+                    <a href="{% if products.has_next %}?page={{ products.next_page_number }}{% endif %}">Следующий</a>
                 </li>
             </ul>
         </div>
