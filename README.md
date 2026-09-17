@@ -1,4 +1,3 @@
-[README (1).md](https://github.com/user-attachments/files/32344603/README.1.md)
 # 🛋️ FERAL & CRAFT — интернет-магазин мебели
 
 Интернет-магазин дизайнерской мебели, декора и текстиля на Django, доступный по адресу **[feralcraft.store](https://feralcraft.store/)**.
